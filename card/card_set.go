@@ -41,7 +41,7 @@ type Card struct {
 	Printings               []string              `json:"printings"`
 	PurchaseUrls            card.PurchaseUrls     `json:"purchaseUrls"`
 	RelatedCards            card.RelatedCards     `json:"relatedCards"`
-	Rulings                 card.CardRulings      `json:"rulings"`
+	Rulings                 []card.CardRulings    `json:"rulings"`
 	Side                    string                `json:"side"`
 	Subsets                 []string              `json:"subsets"`
 	Subtypes                []string              `json:"subtypes"`
