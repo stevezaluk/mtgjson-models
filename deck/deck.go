@@ -27,16 +27,20 @@ MainboardContents (slice[card.Card]) - A list of card models that represent the 
 SideBoardContents (slide[Card.Card]) - A list of card models that represent the side board
 */
 type Deck struct {
-	Name              string   `json:"name"`
-	Code              string   `json:"code"`
-	Type              string   `json:"type"`
-	ReleaseDate       string   `json:"releaseDate"`
-	CommanderIds      []string `json:"commander"`
-	MainBoardIds      []string `json:"mainBoard"`
-	SideBoardIds      []string `json:"sideBoard"`
-	CommanderContents []card.Card
-	MainboardContents []card.Card
-	SideboardContents []card.Card
+	Name        string       `json:"name"`
+	Code        string       `json:"code"`
+	Type        string       `json:"type"`
+	ReleaseDate string       `json:"releaseDate"`
+	Commander   []string     `json:"commander"`
+	Mainboard   []string     `json:"mainBoard"`
+	Sideboard   []string     `json:"sideBoard"`
+	Contents    DeckContents `json:"contents"`
+}
+
+type DeckContents struct {
+	Commander []card.Card `json:"commanderContents"`
+	Mainboard []card.Card `json:"mainBoardContents"`
+	Sideboard []card.Card `json:"sideBoardContents"`
 }
 
 /*
@@ -50,11 +54,32 @@ Returns
 */
 func (d *Deck) GetIdBoard(board string) *[]string {
 	if board == MAINBOARD {
-		return &d.MainBoardIds
+		return &d.Mainboard
 	} else if board == SIDEBOARD {
-		return &d.SideBoardIds
+		return &d.Sideboard
 	} else if board == COMMANDER {
-		return &d.CommanderIds
+		return &d.Commander
+	}
+
+	return nil
+}
+
+/*
+GetIdBoard - Returns a pointer to the slice that represents ids in the requested board
+
+Parameters:
+board (string) - The board you want a pointer too
+
+Returns
+*slice[string] - The board the caller requested
+*/
+func (d *Deck) GetBoard(board string) *[]card.Card {
+	if board == MAINBOARD {
+		return &d.Contents.Mainboard
+	} else if board == SIDEBOARD {
+		return &d.Contents.Sideboard
+	} else if board == COMMANDER {
+		return &d.Contents.Commander
 	}
 
 	return nil
@@ -94,8 +119,8 @@ allCard ([]string) - A list of all UUID's in the deck
 func (d Deck) AllCardIds() []string {
 	var allCards []string
 
-	allCards = append(d.MainBoardIds, d.SideBoardIds...)
-	allCards = append(allCards, d.CommanderIds...)
+	allCards = append(d.Mainboard, d.Sideboard...)
+	allCards = append(allCards, d.Commander...)
 
 	return allCards
 }
