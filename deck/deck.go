@@ -91,7 +91,7 @@ Parameters: None
 Returns:
 allCard ([]string) - A list of all UUID's in the deck
 */
-func (d Deck) AllCards() []string {
+func (d Deck) AllCardIds() []string {
 	var allCards []string
 
 	allCards = append(d.MainBoardIds, d.SideBoardIds...)
