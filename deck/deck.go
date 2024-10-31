@@ -1,6 +1,7 @@
 package deck
 
 import (
+	"github.com/stevezaluk/mtgjson-models/card"
 	"github.com/stevezaluk/mtgjson-models/errors"
 	"slices"
 )
@@ -14,26 +15,36 @@ const (
 /*
 Deck - Represents a MTGJSON deck
 
-Code (string) - A 3 or 4 digit code as an identifier for the deck
-Commander (slice[string]) - A list of UUID's that represents the commander for the deck
-Mainboard (slice[string]) - A list of UUID's that represents the main board for the deck
 Name (string) - The name of the deck
-ReleaseDate (string) - The release date of the deck
-Sideboard (slice[string]) - A list of UUID's that represents the side board for the deck
+Code (string) - A 3 or 4 digit code as an identifier for the deck
 Type (string) - The deck type
+ReleaseDate (string) - The release date of the deck
+CommanderIds (slice[string]) - A list of UUID's that represents the commander for the deck
+MainboardIds (slice[string]) - A list of UUID's that represents the main board for the deck
+SideboardIds (slice[string]) - A list of UUID's that represents the side board for the deck
+CommanderContents (slice[card.Card]) - A list of card models that represent the cards of the commander board
+MainboardContents (slice[card.Card]) - A list of card models that represent the cards of the main board
+SideBoardContents (slide[Card.Card]) - A list of card models that represent the side board
 */
 type Deck struct {
-	Code        string   `json:"code"`
-	Commander   []string `json:"commander"`
-	MainBoard   []string `json:"mainBoard"`
-	Name        string   `json:"name"`
-	ReleaseDate string   `json:"releaseDate"`
-	SideBoard   []string `json:"sideBoard"`
-	Type        string   `json:"type"`
+	Name        string       `json:"name"`
+	Code        string       `json:"code"`
+	Type        string       `json:"type"`
+	ReleaseDate string       `json:"releaseDate"`
+	Commander   []string     `json:"commander"`
+	Mainboard   []string     `json:"mainBoard"`
+	Sideboard   []string     `json:"sideBoard"`
+	Contents    DeckContents `json:"contents"`
+}
+
+type DeckContents struct {
+	Commander []card.Card `json:"commanderContents"`
+	Mainboard []card.Card `json:"mainBoardContents"`
+	Sideboard []card.Card `json:"sideBoardContents"`
 }
 
 /*
-GetBoard - Returns a pointer to the slice that represents the requested board
+GetIdBoard - Returns a pointer to the slice that represents ids in the requested board
 
 Parameters:
 board (string) - The board you want a pointer too
@@ -41,13 +52,34 @@ board (string) - The board you want a pointer too
 Returns
 *slice[string] - The board the caller requested
 */
-func (d *Deck) GetBoard(board string) *[]string {
+func (d *Deck) GetIdBoard(board string) *[]string {
 	if board == MAINBOARD {
-		return &d.MainBoard
+		return &d.Mainboard
 	} else if board == SIDEBOARD {
-		return &d.SideBoard
+		return &d.Sideboard
 	} else if board == COMMANDER {
 		return &d.Commander
+	}
+
+	return nil
+}
+
+/*
+GetIdBoard - Returns a pointer to the slice that represents ids in the requested board
+
+Parameters:
+board (string) - The board you want a pointer too
+
+Returns
+*slice[string] - The board the caller requested
+*/
+func (d *Deck) GetBoard(board string) *[]card.Card {
+	if board == MAINBOARD {
+		return &d.Contents.Mainboard
+	} else if board == SIDEBOARD {
+		return &d.Contents.Sideboard
+	} else if board == COMMANDER {
+		return &d.Contents.Commander
 	}
 
 	return nil
@@ -61,7 +93,7 @@ uuid (string) - The uuid to check
 board (string) - The board you want to check. Can be either: mainBoard, sideBoard, commanderBoard
 */
 func (d Deck) CardExists(uuid string, board string) (bool, error) {
-	sourceBoard := d.GetBoard(board)
+	sourceBoard := d.GetIdBoard(board)
 	if sourceBoard == nil {
 		return false, errors.ErrBoardNotExist
 	}
@@ -84,10 +116,10 @@ Parameters: None
 Returns:
 allCard ([]string) - A list of all UUID's in the deck
 */
-func (d Deck) AllCards() []string {
+func (d Deck) AllCardIds() []string {
 	var allCards []string
 
-	allCards = append(d.MainBoard, d.SideBoard...)
+	allCards = append(d.Mainboard, d.Sideboard...)
 	allCards = append(allCards, d.Commander...)
 
 	return allCards
@@ -105,7 +137,7 @@ Returns
 errors.ErrBoardNotExist - If the board does not exist
 */
 func (d *Deck) AddCards(uuids []string, board string) error {
-	sourceBoard := d.GetBoard(board)
+	sourceBoard := d.GetIdBoard(board)
 	if sourceBoard == nil {
 		return errors.ErrBoardNotExist
 	}
@@ -127,7 +159,7 @@ Returns
 errors.ErrBoardNotExist - If the board does not exist
 */
 func (d *Deck) DeleteCards(uuids []string, board string) error {
-	sourceBoard := d.GetBoard(board)
+	sourceBoard := d.GetIdBoard(board)
 	if sourceBoard == nil {
 		return errors.ErrBoardNotExist
 	}
