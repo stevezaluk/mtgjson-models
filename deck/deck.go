@@ -40,7 +40,7 @@ type Deck struct {
 }
 
 /*
-GetBoard - Returns a pointer to the slice that represents the requested board
+GetIdBoard - Returns a pointer to the slice that represents ids in the requested board
 
 Parameters:
 board (string) - The board you want a pointer too
