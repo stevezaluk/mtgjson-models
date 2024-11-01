@@ -27,14 +27,14 @@ MainboardContents (slice[card.Card]) - A list of card models that represent the 
 SideBoardContents (slide[Card.Card]) - A list of card models that represent the side board
 */
 type Deck struct {
-	Name        string       `json:"name"`
-	Code        string       `json:"code"`
-	Type        string       `json:"type"`
-	ReleaseDate string       `json:"releaseDate"`
-	Commander   []string     `json:"commander"`
-	Mainboard   []string     `json:"mainBoard"`
-	Sideboard   []string     `json:"sideBoard"`
-	Contents    DeckContents `json:"contents"`
+	Name        string   `json:"name"`
+	Code        string   `json:"code"`
+	Type        string   `json:"type"`
+	ReleaseDate string   `json:"releaseDate"`
+	Commander   []string `json:"commander"`
+	Mainboard   []string `json:"mainBoard"`
+	Sideboard   []string `json:"sideBoard"`
+	Contents    DeckContents
 }
 
 type DeckContents struct {
