@@ -38,9 +38,9 @@ type Deck struct {
 }
 
 type DeckContents struct {
-	Commander []card.Card `json:"commanderContents"`
-	Mainboard []card.Card `json:"mainBoardContents"`
-	Sideboard []card.Card `json:"sideBoardContents"`
+	Commander []card.Card `json:"commander"`
+	Mainboard []card.Card `json:"mainBoard"`
+	Sideboard []card.Card `json:"sideBoard"`
 }
 
 /*
