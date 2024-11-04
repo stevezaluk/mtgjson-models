@@ -10,6 +10,8 @@ var ErrNoCards = errors.New("card: No card found on index operation")
 var ErrInvalidUUID = errors.New("card: invalid v5 uuid")
 var ErrCardMissingId = errors.New("card: Card is missing a name and/or a mtgjsonV4Id")
 var ErrCardAlreadyExist = errors.New("card: Could not complete operation. Card already exists")
+var ErrCardDeleteFailed = errors.New("card: Failed to delete deck. Unknown server issue")
+var ErrCardUpdateFailed = errors.New("card: Failed to update card with new metadata")
 
 /*
 Deck Errors - Holds all errors that could arise from fetching or inserting decks
