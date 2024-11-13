@@ -28,3 +28,16 @@ var ErrBoardNotExist = errors.New("deck: Failed to add card to deck. Requested b
 Set Errors - Holds all errors that could arise from fetching or creating sets
 */
 var ErrNoSet = errors.New("set: failed to find set with the specified code")
+
+/*
+User Errors - Holds all errors that could arise from fetching or creating new users
+*/
+var ErrNoUser = errors.New("user: Failed to find user with the specified username")
+var ErrInvalidEmail = errors.New("user: Failed to create user. Email is invalid")
+var ErrInvalidPasswordLength = errors.New("user: Failed to create user. Password must be at least 12 characters long")
+
+/*
+Credential Errors - Holds all errors that could arise from fetching or creating new user credentials
+*/
+var ErrNoCred = errors.New("userCredentials: Failed to find user credentials with the specified credentialId")
+var ErrFailedToGenerateKey = errors.New("userCredentials: Failed to generate AES key for user credentials")
