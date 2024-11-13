@@ -33,8 +33,10 @@ var ErrNoSet = errors.New("set: failed to find set with the specified code")
 User Errors - Holds all errors that could arise from fetching or creating new users
 */
 var ErrNoUser = errors.New("user: Failed to find user with the specified username")
+var ErrUserAlreadyExist = errors.New("user: Failed to create user. A user already exists with this username")
 var ErrInvalidEmail = errors.New("user: Failed to create user. Email is invalid")
 var ErrInvalidPasswordLength = errors.New("user: Failed to create user. Password must be at least 12 characters long")
+var ErrUserMissingId = errors.New("user: Failed to create user. User model is missing Id")
 
 /*
 Credential Errors - Holds all errors that could arise from fetching or creating new user credentials
