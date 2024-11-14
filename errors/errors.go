@@ -37,6 +37,8 @@ var ErrUserAlreadyExist = errors.New("user: Failed to create user. A user alread
 var ErrInvalidEmail = errors.New("user: Failed to create user. Email is invalid")
 var ErrInvalidPasswordLength = errors.New("user: Failed to create user. Password must be at least 12 characters long")
 var ErrUserMissingId = errors.New("user: Failed to create user. User model is missing Id")
+var ErrFailedToRegisterUser = errors.New("user: Failed to register user with Auth0")
+var ErrFailedToLoginUser = errors.New("user: Failed to login user with Auth0")
 
 /*
 Credential Errors - Holds all errors that could arise from fetching or creating new user credentials
