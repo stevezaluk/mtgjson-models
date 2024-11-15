@@ -39,6 +39,7 @@ var ErrInvalidPasswordLength = errors.New("user: Failed to create user. Password
 var ErrUserMissingId = errors.New("user: Failed to create user. User model is missing Id")
 var ErrFailedToRegisterUser = errors.New("user: Failed to register user with Auth0")
 var ErrFailedToLoginUser = errors.New("user: Failed to login user with Auth0")
+var ErrTokenInvalid = errors.New("user: Access Token is not valid")
 
 /*
 Credential Errors - Holds all errors that could arise from fetching or creating new user credentials
