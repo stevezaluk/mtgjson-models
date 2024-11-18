@@ -34,6 +34,7 @@ User Errors - Holds all errors that could arise from fetching or creating new us
 */
 var ErrNoUser = errors.New("user: Failed to find user with the specified username")
 var ErrUserAlreadyExist = errors.New("user: Failed to create user. A user already exists with this username")
+var ErrFailedToDeleteUser = errors.New("user: Failed to delete user")
 var ErrInvalidEmail = errors.New("user: Failed to create user. Email is invalid")
 var ErrInvalidPasswordLength = errors.New("user: Failed to create user. Password must be at least 12 characters long")
 var ErrUserMissingId = errors.New("user: Failed to create user. User model is missing Id")
