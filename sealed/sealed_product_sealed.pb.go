@@ -25,10 +25,10 @@ type SealedProductSealed struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Count int64  `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
-	Name  string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Set   string `protobuf:"bytes,3,opt,name=set,proto3" json:"set,omitempty"`
-	Uuid  string `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Count int64  `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty" bson:"count"` // @gotags: bson:"count"
+	Name  string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" bson:"name"`    // @gotags: bson:"name"
+	Set   string `protobuf:"bytes,3,opt,name=set,proto3" json:"set,omitempty" bson:"set"`      // @gotags: bson:"set"
+	Uuid  string `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty" bson:"uuid"`    // @gotags: bson:"uuid"
 }
 
 func (x *SealedProductSealed) Reset() {

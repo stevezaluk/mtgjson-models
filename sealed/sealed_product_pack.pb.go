@@ -25,8 +25,8 @@ type SealedProductPack struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Code string `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
-	Set  string `protobuf:"bytes,2,opt,name=set,proto3" json:"set,omitempty"`
+	Code string `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty" bson:"code"` // @gotags: bson:"code"
+	Set  string `protobuf:"bytes,2,opt,name=set,proto3" json:"set,omitempty" bson:"set"`   // @gotags: bson:"set"
 }
 
 func (x *SealedProductPack) Reset() {

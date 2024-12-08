@@ -26,11 +26,11 @@ type MTGJSONAPIMeta struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CreationDate string `protobuf:"bytes,1,opt,name=creationDate,proto3" json:"creationDate,omitempty"`
-	ModifiedDate string `protobuf:"bytes,2,opt,name=modifiedDate,proto3" json:"modifiedDate,omitempty"`
-	Owner        string `protobuf:"bytes,3,opt,name=owner,proto3" json:"owner,omitempty"`
-	Type         string `protobuf:"bytes,4,opt,name=type,proto3" json:"type,omitempty"`
-	Subtype      string `protobuf:"bytes,5,opt,name=subtype,proto3" json:"subtype,omitempty"`
+	CreationDate string `protobuf:"bytes,1,opt,name=creationDate,proto3" json:"creationDate,omitempty" bson:"creationDate"` // @gotags: bson:"creationDate"
+	ModifiedDate string `protobuf:"bytes,2,opt,name=modifiedDate,proto3" json:"modifiedDate,omitempty" bson:"modifiedDate"` // @gotags: bson:"modifiedDate"
+	Owner        string `protobuf:"bytes,3,opt,name=owner,proto3" json:"owner,omitempty" bson:"owner"`               // @gotags: bson:"owner"
+	Type         string `protobuf:"bytes,4,opt,name=type,proto3" json:"type,omitempty" bson:"type"`                 // @gotags: bson:"type"
+	Subtype      string `protobuf:"bytes,5,opt,name=subtype,proto3" json:"subtype,omitempty" bson:"subtype"`           // @gotags: bson:"subtype"
 }
 
 func (x *MTGJSONAPIMeta) Reset() {

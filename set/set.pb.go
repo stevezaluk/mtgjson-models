@@ -28,37 +28,37 @@ type Set struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	BaseSetSize      int64                             `protobuf:"varint,1,opt,name=baseSetSize,proto3" json:"baseSetSize,omitempty"`
-	Block            string                            `protobuf:"bytes,2,opt,name=block,proto3" json:"block,omitempty"`
-	Booster          map[string]*booster.BoosterConfig `protobuf:"bytes,3,rep,name=booster,proto3" json:"booster,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Cards            []string                          `protobuf:"bytes,4,rep,name=cards,proto3" json:"cards,omitempty"`
-	CardsphereId     int64                             `protobuf:"varint,5,opt,name=cardsphereId,proto3" json:"cardsphereId,omitempty"`
-	Code             string                            `protobuf:"bytes,6,opt,name=code,proto3" json:"code,omitempty"`
-	CodeV3           string                            `protobuf:"bytes,7,opt,name=codeV3,proto3" json:"codeV3,omitempty"`
-	Decks            []string                          `protobuf:"bytes,8,rep,name=decks,proto3" json:"decks,omitempty"`
-	IsForeignOnly    bool                              `protobuf:"varint,9,opt,name=isForeignOnly,proto3" json:"isForeignOnly,omitempty"`
-	IsFoilOnly       bool                              `protobuf:"varint,10,opt,name=isFoilOnly,proto3" json:"isFoilOnly,omitempty"`
-	IsNonFoilOnly    bool                              `protobuf:"varint,11,opt,name=isNonFoilOnly,proto3" json:"isNonFoilOnly,omitempty"`
-	IsOnlineOnly     bool                              `protobuf:"varint,12,opt,name=isOnlineOnly,proto3" json:"isOnlineOnly,omitempty"`
-	IsPaperOnly      bool                              `protobuf:"varint,13,opt,name=isPaperOnly,proto3" json:"isPaperOnly,omitempty"`
-	IsPartialPreview bool                              `protobuf:"varint,14,opt,name=isPartialPreview,proto3" json:"isPartialPreview,omitempty"`
-	KeyruneCode      string                            `protobuf:"bytes,15,opt,name=keyruneCode,proto3" json:"keyruneCode,omitempty"`
-	Languages        []string                          `protobuf:"bytes,16,rep,name=languages,proto3" json:"languages,omitempty"`
-	McmId            int64                             `protobuf:"varint,17,opt,name=mcmId,proto3" json:"mcmId,omitempty"`
-	McmIdExtras      int64                             `protobuf:"varint,18,opt,name=mcmIdExtras,proto3" json:"mcmIdExtras,omitempty"`
-	McmName          string                            `protobuf:"bytes,19,opt,name=mcmName,proto3" json:"mcmName,omitempty"`
-	MtgoCode         string                            `protobuf:"bytes,20,opt,name=mtgoCode,proto3" json:"mtgoCode,omitempty"`
-	Name             string                            `protobuf:"bytes,21,opt,name=name,proto3" json:"name,omitempty"`
-	ParentCode       string                            `protobuf:"bytes,22,opt,name=parentCode,proto3" json:"parentCode,omitempty"`
-	ReleaseDate      string                            `protobuf:"bytes,23,opt,name=releaseDate,proto3" json:"releaseDate,omitempty"`
-	SealedProduct    []*sealed.SealedProduct           `protobuf:"bytes,24,rep,name=sealedProduct,proto3" json:"sealedProduct,omitempty"`
-	TcgPlayerGroupId int64                             `protobuf:"varint,25,opt,name=tcgPlayerGroupId,proto3" json:"tcgPlayerGroupId,omitempty"`
-	Tokens           []string                          `protobuf:"bytes,26,rep,name=tokens,proto3" json:"tokens,omitempty"`
-	TokenSetCode     string                            `protobuf:"bytes,27,opt,name=tokenSetCode,proto3" json:"tokenSetCode,omitempty"`
-	TokenSetSize     int64                             `protobuf:"varint,28,opt,name=tokenSetSize,proto3" json:"tokenSetSize,omitempty"`
-	Translations     *meta.Translations                `protobuf:"bytes,29,opt,name=translations,proto3" json:"translations,omitempty"`
-	Type             string                            `protobuf:"bytes,30,opt,name=type,proto3" json:"type,omitempty"`
-	MtgjsonApiMeta   *meta.MTGJSONAPIMeta              `protobuf:"bytes,31,opt,name=mtgjsonApiMeta,proto3" json:"mtgjsonApiMeta,omitempty"`
+	BaseSetSize      int64                             `protobuf:"varint,1,opt,name=baseSetSize,proto3" json:"baseSetSize,omitempty" bson:"baseSetSize"`                                                                                // @gotags: bson:"baseSetSize"
+	Block            string                            `protobuf:"bytes,2,opt,name=block,proto3" json:"block,omitempty" bson:"block"`                                                                                             // @gotags: bson:"block"
+	Booster          map[string]*booster.BoosterConfig `protobuf:"bytes,3,rep,name=booster,proto3" json:"booster,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3" bson:"booster"` // @gotags: bson:"booster"
+	Cards            []string                          `protobuf:"bytes,4,rep,name=cards,proto3" json:"cards,omitempty" bson:"cards"`                                                                                             // @gotags: bson:"cards"
+	CardsphereId     int64                             `protobuf:"varint,5,opt,name=cardsphereId,proto3" json:"cardsphereId,omitempty" bson:"cardsphereId"`                                                                              // @gotags: bson:"cardsphereId"
+	Code             string                            `protobuf:"bytes,6,opt,name=code,proto3" json:"code,omitempty" bson:"code"`                                                                                               // @gotags: bson:"code"
+	CodeV3           string                            `protobuf:"bytes,7,opt,name=codeV3,proto3" json:"codeV3,omitempty" bson:"codeV3"`                                                                                           // @gotags: bson:"codeV3"
+	Decks            []string                          `protobuf:"bytes,8,rep,name=decks,proto3" json:"decks,omitempty" bson:"decks"`                                                                                             // @gotags: bson:"decks"
+	IsForeignOnly    bool                              `protobuf:"varint,9,opt,name=isForeignOnly,proto3" json:"isForeignOnly,omitempty" bson:"isForeignOnly"`                                                                            // @gotags: bson:"isForeignOnly"
+	IsFoilOnly       bool                              `protobuf:"varint,10,opt,name=isFoilOnly,proto3" json:"isFoilOnly,omitempty" bson:"isFoilOnly"`                                                                                 // @gotags: bson:"isFoilOnly"
+	IsNonFoilOnly    bool                              `protobuf:"varint,11,opt,name=isNonFoilOnly,proto3" json:"isNonFoilOnly,omitempty" bson:"isNonFoilOnly"`                                                                           // @gotags: bson:"isNonFoilOnly"
+	IsOnlineOnly     bool                              `protobuf:"varint,12,opt,name=isOnlineOnly,proto3" json:"isOnlineOnly,omitempty" bson:"isOnlineOnly"`                                                                             // @gotags: bson:"isOnlineOnly"
+	IsPaperOnly      bool                              `protobuf:"varint,13,opt,name=isPaperOnly,proto3" json:"isPaperOnly,omitempty" bson:"isPaperOnly"`                                                                               // @gotags: bson:"isPaperOnly"
+	IsPartialPreview bool                              `protobuf:"varint,14,opt,name=isPartialPreview,proto3" json:"isPartialPreview,omitempty" bson:"isPartialPreview"`                                                                     // @gotags: bson:"isPartialPreview"
+	KeyruneCode      string                            `protobuf:"bytes,15,opt,name=keyruneCode,proto3" json:"keyruneCode,omitempty" bson:"keyrunCode"`                                                                                // @gotags: bson:"keyrunCode"
+	Languages        []string                          `protobuf:"bytes,16,rep,name=languages,proto3" json:"languages,omitempty" bson:"languages"`                                                                                    // @gotags: bson:"languages"
+	McmId            int64                             `protobuf:"varint,17,opt,name=mcmId,proto3" json:"mcmId,omitempty" bson:"mcmId"`                                                                                           // @gotags: bson:"mcmId"
+	McmIdExtras      int64                             `protobuf:"varint,18,opt,name=mcmIdExtras,proto3" json:"mcmIdExtras,omitempty" bson:"mcmIdExtras"`                                                                               // @gotags: bson:"mcmIdExtras"
+	McmName          string                            `protobuf:"bytes,19,opt,name=mcmName,proto3" json:"mcmName,omitempty" bson:"mcmName"`                                                                                        // @gotags: bson:"mcmName"
+	MtgoCode         string                            `protobuf:"bytes,20,opt,name=mtgoCode,proto3" json:"mtgoCode,omitempty" bson:"mtgoCode"`                                                                                      // @gotags: bson:"mtgoCode"
+	Name             string                            `protobuf:"bytes,21,opt,name=name,proto3" json:"name,omitempty" bson:"name"`                                                                                              // @gotags: bson:"name"
+	ParentCode       string                            `protobuf:"bytes,22,opt,name=parentCode,proto3" json:"parentCode,omitempty" bson:"parentCode"`                                                                                  // @gotags: bson:"parentCode"
+	ReleaseDate      string                            `protobuf:"bytes,23,opt,name=releaseDate,proto3" json:"releaseDate,omitempty" bson:"releaseDate"`                                                                                // @gotags: bson:"releaseDate"
+	SealedProduct    []*sealed.SealedProduct           `protobuf:"bytes,24,rep,name=sealedProduct,proto3" json:"sealedProduct,omitempty" bson:"sealedProduct"`                                                                            // @gotags: bson:"sealedProduct"
+	TcgPlayerGroupId int64                             `protobuf:"varint,25,opt,name=tcgPlayerGroupId,proto3" json:"tcgPlayerGroupId,omitempty" bson:"tcgPlayerGroupId"`                                                                     // @gotags: bson:"tcgPlayerGroupId"
+	Tokens           []string                          `protobuf:"bytes,26,rep,name=tokens,proto3" json:"tokens,omitempty" bson:"tokens"`                                                                                          // @gotags: bson:"tokens"
+	TokenSetCode     string                            `protobuf:"bytes,27,opt,name=tokenSetCode,proto3" json:"tokenSetCode,omitempty" bson:"tokenSetCode"`                                                                              // @gotags: bson:"tokenSetCode"
+	TokenSetSize     int64                             `protobuf:"varint,28,opt,name=tokenSetSize,proto3" json:"tokenSetSize,omitempty" bson:"tokenSetSize"`                                                                             // @gotags: bson:"tokenSetSize"
+	Translations     *meta.Translations                `protobuf:"bytes,29,opt,name=translations,proto3" json:"translations,omitempty" bson:"translations"`                                                                              // @gotags: bson:"translations"
+	Type             string                            `protobuf:"bytes,30,opt,name=type,proto3" json:"type,omitempty" bson:"type"`                                                                                              // @gotags: bson:"type"
+	MtgjsonApiMeta   *meta.MTGJSONAPIMeta              `protobuf:"bytes,31,opt,name=mtgjsonApiMeta,proto3" json:"mtgjsonApiMeta,omitempty" bson:"mtgjsonApiMeta"`                                                                          // @gotags: bson:"mtgjsonApiMeta"
 }
 
 func (x *Set) Reset() {

@@ -27,13 +27,13 @@ type User struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Username   string          `protobuf:"bytes,1,opt,name=username,proto3" json:"username,omitempty"`
-	Email      string          `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
-	Auth0Id    string          `protobuf:"bytes,3,opt,name=auth0Id,proto3" json:"auth0Id,omitempty"`
-	OwnedDecks []string        `protobuf:"bytes,4,rep,name=ownedDecks,proto3" json:"ownedDecks,omitempty"`
-	OwnedCards []string        `protobuf:"bytes,5,rep,name=ownedCards,proto3" json:"ownedCards,omitempty"`
-	OwnedSets  []string        `protobuf:"bytes,6,rep,name=ownedSets,proto3" json:"ownedSets,omitempty"`
-	Stats      *UserStatistics `protobuf:"bytes,7,opt,name=stats,proto3" json:"stats,omitempty"`
+	Username   string          `protobuf:"bytes,1,opt,name=username,proto3" json:"username,omitempty" bson:"username"`     // @gotags: bson:"username"
+	Email      string          `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty" bson:"email"`           // @gotags: bson:"email"
+	Auth0Id    string          `protobuf:"bytes,3,opt,name=auth0Id,proto3" json:"auth0Id,omitempty" bson:"auth0Id"`       // @gotags: bson:"auth0Id"
+	OwnedDecks []string        `protobuf:"bytes,4,rep,name=ownedDecks,proto3" json:"ownedDecks,omitempty" bson:"ownedDecks"` // @gotags: bson:"ownedDecks"
+	OwnedCards []string        `protobuf:"bytes,5,rep,name=ownedCards,proto3" json:"ownedCards,omitempty" bson:"ownedCards"` // @gotags: bson:"ownedCards"
+	OwnedSets  []string        `protobuf:"bytes,6,rep,name=ownedSets,proto3" json:"ownedSets,omitempty" bson:"ownedSets"`   // @gotags: bson:"ownedSets"
+	Stats      *UserStatistics `protobuf:"bytes,7,opt,name=stats,proto3" json:"stats,omitempty" bson:"stats"`           // @gotags: bson:"stats"
 }
 
 func (x *User) Reset() {
@@ -121,16 +121,16 @@ type UserStatistics struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Level            int64   `protobuf:"varint,1,opt,name=level,proto3" json:"level,omitempty"`
-	Prestige         int64   `protobuf:"varint,2,opt,name=prestige,proto3" json:"prestige,omitempty"`
-	XpLeft           int64   `protobuf:"varint,3,opt,name=xpLeft,proto3" json:"xpLeft,omitempty"`
-	TotalGamesPlayed int64   `protobuf:"varint,4,opt,name=totalGamesPlayed,proto3" json:"totalGamesPlayed,omitempty"`
-	TotalGamesWon    int64   `protobuf:"varint,5,opt,name=totalGamesWon,proto3" json:"totalGamesWon,omitempty"`
-	TotalGamesLost   int64   `protobuf:"varint,6,opt,name=totalGamesLost,proto3" json:"totalGamesLost,omitempty"`
-	WinLossRatio     float32 `protobuf:"fixed32,7,opt,name=winLossRatio,proto3" json:"winLossRatio,omitempty"`
-	TotalDecksOwned  int64   `protobuf:"varint,8,opt,name=totalDecksOwned,proto3" json:"totalDecksOwned,omitempty"`
-	TotalSetsOwned   int64   `protobuf:"varint,9,opt,name=totalSetsOwned,proto3" json:"totalSetsOwned,omitempty"`
-	TotalCardsOwned  int64   `protobuf:"varint,10,opt,name=totalCardsOwned,proto3" json:"totalCardsOwned,omitempty"`
+	Level            int64   `protobuf:"varint,1,opt,name=level,proto3" json:"level,omitempty" bson:"level"`                       // @gotags: bson:"level"
+	Prestige         int64   `protobuf:"varint,2,opt,name=prestige,proto3" json:"prestige,omitempty" bson:"prestige"`                 // @gotags: bson:"prestige"
+	XpLeft           int64   `protobuf:"varint,3,opt,name=xpLeft,proto3" json:"xpLeft,omitempty" bson:"xpLeft"`                     // @gotags: bson:"xpLeft"
+	TotalGamesPlayed int64   `protobuf:"varint,4,opt,name=totalGamesPlayed,proto3" json:"totalGamesPlayed,omitempty" bson:"totalGamesPlayed"` // @gotags: bson:"totalGamesPlayed"
+	TotalGamesWon    int64   `protobuf:"varint,5,opt,name=totalGamesWon,proto3" json:"totalGamesWon,omitempty" bson:"totalGamesWon"`       // @gotags: bson:"totalGamesWon"
+	TotalGamesLost   int64   `protobuf:"varint,6,opt,name=totalGamesLost,proto3" json:"totalGamesLost,omitempty" bson:"totalGamesLost"`     // @gotags: bson:"totalGamesLost"
+	WinLossRatio     float32 `protobuf:"fixed32,7,opt,name=winLossRatio,proto3" json:"winLossRatio,omitempty" bson:"winLossRatio"`        // @gotags: bson:"winLossRatio"
+	TotalDecksOwned  int64   `protobuf:"varint,8,opt,name=totalDecksOwned,proto3" json:"totalDecksOwned,omitempty" bson:"totalDecksOwned"`   // @gotags: bson:"totalDecksOwned"
+	TotalSetsOwned   int64   `protobuf:"varint,9,opt,name=totalSetsOwned,proto3" json:"totalSetsOwned,omitempty" bson:"totalSetsOwned"`     // @gotags: bson:"totalSetsOwned"
+	TotalCardsOwned  int64   `protobuf:"varint,10,opt,name=totalCardsOwned,proto3" json:"totalCardsOwned,omitempty" bson:"totalCardsOwned"`  // @gotags: bson:"totalCardsOwned"
 }
 
 func (x *UserStatistics) Reset() {

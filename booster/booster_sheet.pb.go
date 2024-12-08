@@ -25,12 +25,12 @@ type BoosterSheet struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AllowDuplicates bool             `protobuf:"varint,1,opt,name=allowDuplicates,proto3" json:"allowDuplicates,omitempty"`
-	BalanceColors   bool             `protobuf:"varint,2,opt,name=balanceColors,proto3" json:"balanceColors,omitempty"`
-	Cards           map[string]int64 `protobuf:"bytes,3,rep,name=cards,proto3" json:"cards,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3"`
-	Foil            bool             `protobuf:"varint,4,opt,name=foil,proto3" json:"foil,omitempty"`
-	Fixed           bool             `protobuf:"varint,5,opt,name=fixed,proto3" json:"fixed,omitempty"`
-	TotalWeight     int64            `protobuf:"varint,6,opt,name=totalWeight,proto3" json:"totalWeight,omitempty"`
+	AllowDuplicates bool             `protobuf:"varint,1,opt,name=allowDuplicates,proto3" json:"allowDuplicates,omitempty" bson:"allowDuplicates"`                                                                     // @gotags: bson:"allowDuplicates"
+	BalanceColors   bool             `protobuf:"varint,2,opt,name=balanceColors,proto3" json:"balanceColors,omitempty" bson:"balanceColors"`                                                                         // @gotags: bson:"balanceColors"
+	Cards           map[string]int64 `protobuf:"bytes,3,rep,name=cards,proto3" json:"cards,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3" bson:"cards"` // @gotags: bson:"cards"
+	Foil            bool             `protobuf:"varint,4,opt,name=foil,proto3" json:"foil,omitempty" bson:"foil"`                                                                                           // @gotags: bson:"foil"
+	Fixed           bool             `protobuf:"varint,5,opt,name=fixed,proto3" json:"fixed,omitempty" bson:"fixed"`                                                                                         // @gotags: bson:"fixed"
+	TotalWeight     int64            `protobuf:"varint,6,opt,name=totalWeight,proto3" json:"totalWeight,omitempty" bson:"totalWeight"`                                                                             // @gotags: bson:"totalWeight"
 }
 
 func (x *BoosterSheet) Reset() {

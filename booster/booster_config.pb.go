@@ -25,10 +25,10 @@ type BoosterConfig struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Boosters            []*BoosterPack           `protobuf:"bytes,1,rep,name=boosters,proto3" json:"boosters,omitempty"`
-	BoostersTotalWeight int64                    `protobuf:"varint,2,opt,name=boostersTotalWeight,proto3" json:"boostersTotalWeight,omitempty"`
-	Name                string                   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Sheets              map[string]*BoosterSheet `protobuf:"bytes,4,rep,name=sheets,proto3" json:"sheets,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Boosters            []*BoosterPack           `protobuf:"bytes,1,rep,name=boosters,proto3" json:"boosters,omitempty" bson:"boosters"`                                                                                     // @gotags: bson:"boosters"
+	BoostersTotalWeight int64                    `protobuf:"varint,2,opt,name=boostersTotalWeight,proto3" json:"boostersTotalWeight,omitempty" bson:"boostersTotalWeight"`                                                              // @gotags: bson:"boostersTotalWeight"
+	Name                string                   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty" bson:"name"`                                                                                             // @gotags: bson:"name"
+	Sheets              map[string]*BoosterSheet `protobuf:"bytes,4,rep,name=sheets,proto3" json:"sheets,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3" bson:"sheets"` // @gotags: bson:"sheets"
 }
 
 func (x *BoosterConfig) Reset() {

@@ -25,9 +25,9 @@ type SourceProducts struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Etched  []string `protobuf:"bytes,1,rep,name=etched,proto3" json:"etched,omitempty"`
-	Foil    []string `protobuf:"bytes,2,rep,name=foil,proto3" json:"foil,omitempty"`
-	Nonfoil []string `protobuf:"bytes,3,rep,name=nonfoil,proto3" json:"nonfoil,omitempty"`
+	Etched  []string `protobuf:"bytes,1,rep,name=etched,proto3" json:"etched,omitempty" bson:"etched"`   // @gotags: bson:"etched"
+	Foil    []string `protobuf:"bytes,2,rep,name=foil,proto3" json:"foil,omitempty" bson:"foil"`       // @gotags: bson:"foil"
+	Nonfoil []string `protobuf:"bytes,3,rep,name=nonfoil,proto3" json:"nonfoil,omitempty" bson:"nonfoil"` // @gotags: bson:"nonfoil"
 }
 
 func (x *SourceProducts) Reset() {

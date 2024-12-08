@@ -25,11 +25,11 @@ type SealedProductCard struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Foil   bool   `protobuf:"varint,1,opt,name=foil,proto3" json:"foil,omitempty"`
-	Name   string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Number string `protobuf:"bytes,3,opt,name=number,proto3" json:"number,omitempty"`
-	Set    string `protobuf:"bytes,4,opt,name=set,proto3" json:"set,omitempty"`
-	Uuid   string `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Foil   bool   `protobuf:"varint,1,opt,name=foil,proto3" json:"foil,omitempty" bson:"foil"`    // @gotags: bson:"foil"
+	Name   string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" bson:"name"`     // @gotags: bson:"name"
+	Number string `protobuf:"bytes,3,opt,name=number,proto3" json:"number,omitempty" bson:"number"` // @gotags: bson:"number"
+	Set    string `protobuf:"bytes,4,opt,name=set,proto3" json:"set,omitempty" bson:"set"`       // @gotags: bson:"set"
+	Uuid   string `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty" bson:"uuid"`     // @gotags: bson:"uuid"
 }
 
 func (x *SealedProductCard) Reset() {

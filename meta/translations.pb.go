@@ -25,22 +25,22 @@ type Translations struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AncientGreek       string `protobuf:"bytes,1,opt,name=ancientGreek,json=Ancient Greek,proto3" json:"ancientGreek,omitempty"`
-	Arabic             string `protobuf:"bytes,2,opt,name=arabic,json=Arabic,proto3" json:"arabic,omitempty"`
-	ChineseSimplified  string `protobuf:"bytes,3,opt,name=chineseSimplified,json=Chinese Simplified,proto3" json:"chineseSimplified,omitempty"`
-	ChineseTraditional string `protobuf:"bytes,4,opt,name=chineseTraditional,json=Chinese Traditional,proto3" json:"chineseTraditional,omitempty"`
-	French             string `protobuf:"bytes,5,opt,name=french,json=French,proto3" json:"french,omitempty"`
-	German             string `protobuf:"bytes,6,opt,name=german,json=German,proto3" json:"german,omitempty"`
-	Hebrew             string `protobuf:"bytes,7,opt,name=hebrew,json=Hebrew,proto3" json:"hebrew,omitempty"`
-	Italian            string `protobuf:"bytes,8,opt,name=italian,json=Italian,proto3" json:"italian,omitempty"`
-	Japanese           string `protobuf:"bytes,9,opt,name=japanese,json=Japanese,proto3" json:"japanese,omitempty"`
-	Korean             string `protobuf:"bytes,10,opt,name=korean,json=Korean,proto3" json:"korean,omitempty"`
-	Latin              string `protobuf:"bytes,11,opt,name=latin,json=Latin,proto3" json:"latin,omitempty"`
-	Phyrexian          string `protobuf:"bytes,12,opt,name=phyrexian,json=Phyrexian,proto3" json:"phyrexian,omitempty"`
-	PortugeseBrazil    string `protobuf:"bytes,13,opt,name=portugeseBrazil,json=Portugese (Brazil),proto3" json:"portugeseBrazil,omitempty"`
-	Russian            string `protobuf:"bytes,14,opt,name=russian,json=Russian,proto3" json:"russian,omitempty"`
-	Sanskrit           string `protobuf:"bytes,15,opt,name=sanskrit,json=Sanskrit,proto3" json:"sanskrit,omitempty"`
-	Spanish            string `protobuf:"bytes,16,opt,name=spanish,json=Spanish,proto3" json:"spanish,omitempty"`
+	AncientGreek       string `protobuf:"bytes,1,opt,name=ancientGreek,json=Ancient Greek,proto3" json:"ancientGreek,omitempty" bson:"ancientGreek"`                   // @gotags: bson:"ancientGreek"
+	Arabic             string `protobuf:"bytes,2,opt,name=arabic,json=Arabic,proto3" json:"arabic,omitempty" bson:"arabic"`                                      // @gotags: bson:"arabic"
+	ChineseSimplified  string `protobuf:"bytes,3,opt,name=chineseSimplified,json=Chinese Simplified,proto3" json:"chineseSimplified,omitempty" bson:"chineseSimplified"`    // @gotags: bson:"chineseSimplified"
+	ChineseTraditional string `protobuf:"bytes,4,opt,name=chineseTraditional,json=Chinese Traditional,proto3" json:"chineseTraditional,omitempty" bson:"chineseTraditional"` // @gotags: bson:"chineseTraditional"
+	French             string `protobuf:"bytes,5,opt,name=french,json=French,proto3" json:"french,omitempty" bson:"french"`                                      // @gotags: bson:"french"
+	German             string `protobuf:"bytes,6,opt,name=german,json=German,proto3" json:"german,omitempty" bson:"german"`                                      // @gotags: bson:"german"
+	Hebrew             string `protobuf:"bytes,7,opt,name=hebrew,json=Hebrew,proto3" json:"hebrew,omitempty" bson:"hebrew"`                                      // @gotags: bson:"hebrew"
+	Italian            string `protobuf:"bytes,8,opt,name=italian,json=Italian,proto3" json:"italian,omitempty" bson:"italian"`                                   // @gotags: bson:"italian"
+	Japanese           string `protobuf:"bytes,9,opt,name=japanese,json=Japanese,proto3" json:"japanese,omitempty" bson:"japanese"`                                // @gotags: bson:"japanese"
+	Korean             string `protobuf:"bytes,10,opt,name=korean,json=Korean,proto3" json:"korean,omitempty" bson:"korean"`                                     // @gotags: bson:"korean"
+	Latin              string `protobuf:"bytes,11,opt,name=latin,json=Latin,proto3" json:"latin,omitempty" bson:"latin"`                                        // @gotags: bson:"latin"
+	Phyrexian          string `protobuf:"bytes,12,opt,name=phyrexian,json=Phyrexian,proto3" json:"phyrexian,omitempty" bson:"phyrexian"`                            // @gotags: bson:"phyrexian"
+	PortugeseBrazil    string `protobuf:"bytes,13,opt,name=portugeseBrazil,json=Portugese (Brazil),proto3" json:"portugeseBrazil,omitempty" bson:"portugeseBrazil"`       // @gotags: bson:"portugeseBrazil"
+	Russian            string `protobuf:"bytes,14,opt,name=russian,json=Russian,proto3" json:"russian,omitempty" bson:"russian"`                                  // @gotags: bson:"russian"
+	Sanskrit           string `protobuf:"bytes,15,opt,name=sanskrit,json=Sanskrit,proto3" json:"sanskrit,omitempty" bson:"sanskrit"`                               // @gotags: bson:"sanskrit"
+	Spanish            string `protobuf:"bytes,16,opt,name=spanish,json=Spanish,proto3" json:"spanish,omitempty" bson:"spanish"`                                  // @gotags: bson:"spanish"
 }
 
 func (x *Translations) Reset() {
