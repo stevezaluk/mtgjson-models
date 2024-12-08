@@ -25,8 +25,8 @@ type BoosterPack struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Contents map[string]int64 `protobuf:"bytes,1,rep,name=contents,proto3" json:"contents,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3"`
-	Weight   int64            `protobuf:"varint,2,opt,name=weight,proto3" json:"weight,omitempty"`
+	Contents map[string]int64 `protobuf:"bytes,1,rep,name=contents,proto3" json:"contents,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"varint,2,opt,name=value,proto3" bson:"contents"` // @gotags: bson:"contents"
+	Weight   int64            `protobuf:"varint,2,opt,name=weight,proto3" json:"weight,omitempty" bson:"weight"`                                                                                             // @gotags: bson:"weight"
 }
 
 func (x *BoosterPack) Reset() {

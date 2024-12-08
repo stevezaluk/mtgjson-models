@@ -25,13 +25,13 @@ type ForeignData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	FaceName    string           `protobuf:"bytes,1,opt,name=faceName,proto3" json:"faceName,omitempty"`
-	FlavorText  string           `protobuf:"bytes,2,opt,name=flavorText,proto3" json:"flavorText,omitempty"`
-	Identifiers *CardIdentifiers `protobuf:"bytes,3,opt,name=identifiers,proto3" json:"identifiers,omitempty"`
-	Language    string           `protobuf:"bytes,4,opt,name=language,proto3" json:"language,omitempty"`
-	Name        string           `protobuf:"bytes,5,opt,name=name,proto3" json:"name,omitempty"`
-	Text        string           `protobuf:"bytes,6,opt,name=text,proto3" json:"text,omitempty"`
-	Type        string           `protobuf:"bytes,7,opt,name=type,proto3" json:"type,omitempty"`
+	FaceName    string           `protobuf:"bytes,1,opt,name=faceName,proto3" json:"faceName,omitempty" bson:"faceName"`       // @gotags: bson:"faceName"
+	FlavorText  string           `protobuf:"bytes,2,opt,name=flavorText,proto3" json:"flavorText,omitempty" bson:"flavorText"`   // @gotags: bson:"flavorText"
+	Identifiers *CardIdentifiers `protobuf:"bytes,3,opt,name=identifiers,proto3" json:"identifiers,omitempty" bson:"identifiers"` // @gotags: bson:"identifiers"
+	Language    string           `protobuf:"bytes,4,opt,name=language,proto3" json:"language,omitempty" bson:"language"`       // @gotags: bson:"language"
+	Name        string           `protobuf:"bytes,5,opt,name=name,proto3" json:"name,omitempty" bson:"name"`               // @gotags: bson:"name"
+	Text        string           `protobuf:"bytes,6,opt,name=text,proto3" json:"text,omitempty" bson:"text"`               // @gotags: bson:"text"
+	Type        string           `protobuf:"bytes,7,opt,name=type,proto3" json:"type,omitempty" bson:"type"`               // @gotags: bson:"type"
 }
 
 func (x *ForeignData) Reset() {

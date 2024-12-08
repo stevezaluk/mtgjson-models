@@ -26,16 +26,16 @@ type SealedProduct struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CardCount    int64                  `protobuf:"varint,1,opt,name=cardCount,proto3" json:"cardCount,omitempty"`
-	Category     string                 `protobuf:"bytes,2,opt,name=category,proto3" json:"category,omitempty"`
-	Contents     *SealedProductContents `protobuf:"bytes,3,opt,name=contents,proto3" json:"contents,omitempty"`
-	Identifiers  *meta.CardIdentifiers  `protobuf:"bytes,4,opt,name=identifiers,proto3" json:"identifiers,omitempty"`
-	Name         string                 `protobuf:"bytes,5,opt,name=name,proto3" json:"name,omitempty"`
-	ProductSize  int64                  `protobuf:"varint,6,opt,name=productSize,proto3" json:"productSize,omitempty"`
-	PurchaseUrls *meta.PurchaseUrls     `protobuf:"bytes,7,opt,name=purchaseUrls,proto3" json:"purchaseUrls,omitempty"`
-	ReleaseDate  string                 `protobuf:"bytes,8,opt,name=releaseDate,proto3" json:"releaseDate,omitempty"`
-	Subtype      string                 `protobuf:"bytes,9,opt,name=subtype,proto3" json:"subtype,omitempty"`
-	Uuid         string                 `protobuf:"bytes,10,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	CardCount    int64                  `protobuf:"varint,1,opt,name=cardCount,proto3" json:"cardCount,omitempty" bson:"cardCount"`      // @gotags: bson:"cardCount"
+	Category     string                 `protobuf:"bytes,2,opt,name=category,proto3" json:"category,omitempty" bson:"category"`         // @gotags: bson:"category"
+	Contents     *SealedProductContents `protobuf:"bytes,3,opt,name=contents,proto3" json:"contents,omitempty" bson:"contents"`         // @gotags: bson:"contents"
+	Identifiers  *meta.CardIdentifiers  `protobuf:"bytes,4,opt,name=identifiers,proto3" json:"identifiers,omitempty" bson:"identifiers"`   // @gotags: bson:"identifiers"
+	Name         string                 `protobuf:"bytes,5,opt,name=name,proto3" json:"name,omitempty" bson:"name"`                 // @gotags: bson:"name"
+	ProductSize  int64                  `protobuf:"varint,6,opt,name=productSize,proto3" json:"productSize,omitempty" bson:"productSize"`  // @gotags: bson:"productSize"
+	PurchaseUrls *meta.PurchaseUrls     `protobuf:"bytes,7,opt,name=purchaseUrls,proto3" json:"purchaseUrls,omitempty" bson:"purchaseUrls"` // @gotags: bson:"purchaseUrls"
+	ReleaseDate  string                 `protobuf:"bytes,8,opt,name=releaseDate,proto3" json:"releaseDate,omitempty" bson:"releaseDate"`   // @gotags: bson:"releaseDate"
+	Subtype      string                 `protobuf:"bytes,9,opt,name=subtype,proto3" json:"subtype,omitempty" bson:"subtype"`           // @gotags: bson:"subtype"
+	Uuid         string                 `protobuf:"bytes,10,opt,name=uuid,proto3" json:"uuid,omitempty" bson:"uuid"`                // @gotags: bson:"uuid"
 }
 
 func (x *SealedProduct) Reset() {

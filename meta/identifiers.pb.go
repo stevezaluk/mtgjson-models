@@ -25,31 +25,31 @@ type CardIdentifiers struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CardKingdomEtchedId      string `protobuf:"bytes,1,opt,name=cardKingdomEtchedId,proto3" json:"cardKingdomEtchedId,omitempty"`
-	CardKingdomFoilId        string `protobuf:"bytes,2,opt,name=cardKingdomFoilId,proto3" json:"cardKingdomFoilId,omitempty"`
-	CardKingdomId            string `protobuf:"bytes,3,opt,name=cardKingdomId,proto3" json:"cardKingdomId,omitempty"`
-	CardsphereId             string `protobuf:"bytes,4,opt,name=cardsphereId,proto3" json:"cardsphereId,omitempty"`
-	CardsphereFoilId         string `protobuf:"bytes,5,opt,name=cardsphereFoilId,proto3" json:"cardsphereFoilId,omitempty"`
-	CardtraderId             string `protobuf:"bytes,6,opt,name=cardtraderId,proto3" json:"cardtraderId,omitempty"`
-	CsiId                    string `protobuf:"bytes,7,opt,name=csiId,proto3" json:"csiId,omitempty"`
-	McmId                    string `protobuf:"bytes,8,opt,name=mcmId,proto3" json:"mcmId,omitempty"`
-	McmMetaId                string `protobuf:"bytes,9,opt,name=mcmMetaId,proto3" json:"mcmMetaId,omitempty"`
-	MiniaturemarketId        string `protobuf:"bytes,10,opt,name=miniaturemarketId,proto3" json:"miniaturemarketId,omitempty"`
-	MtgArenaId               string `protobuf:"bytes,11,opt,name=mtgArenaId,proto3" json:"mtgArenaId,omitempty"`
-	MtgjsonFoilVersionId     string `protobuf:"bytes,12,opt,name=mtgjsonFoilVersionId,proto3" json:"mtgjsonFoilVersionId,omitempty"`
-	MtgjsonNonFoilVersionId  string `protobuf:"bytes,13,opt,name=mtgjsonNonFoilVersionId,proto3" json:"mtgjsonNonFoilVersionId,omitempty"`
-	MtgjsonV4Id              string `protobuf:"bytes,14,opt,name=mtgjsonV4Id,proto3" json:"mtgjsonV4Id,omitempty"`
-	MtgoFoilId               string `protobuf:"bytes,15,opt,name=mtgoFoilId,proto3" json:"mtgoFoilId,omitempty"`
-	MtgoId                   string `protobuf:"bytes,16,opt,name=mtgoId,proto3" json:"mtgoId,omitempty"`
-	MultiverseId             string `protobuf:"bytes,17,opt,name=multiverseId,proto3" json:"multiverseId,omitempty"`
-	ScgId                    string `protobuf:"bytes,18,opt,name=scgId,proto3" json:"scgId,omitempty"`
-	ScryfallId               string `protobuf:"bytes,19,opt,name=scryfallId,proto3" json:"scryfallId,omitempty"`
-	ScryfallCardBackId       string `protobuf:"bytes,20,opt,name=scryfallCardBackId,proto3" json:"scryfallCardBackId,omitempty"`
-	ScryfallOracleId         string `protobuf:"bytes,21,opt,name=scryfallOracleId,proto3" json:"scryfallOracleId,omitempty"`
-	ScryfallIllustrationId   string `protobuf:"bytes,22,opt,name=scryfallIllustrationId,proto3" json:"scryfallIllustrationId,omitempty"`
-	TcgplayerProductId       string `protobuf:"bytes,23,opt,name=tcgplayerProductId,proto3" json:"tcgplayerProductId,omitempty"`
-	TcgplayerEtchedProductId string `protobuf:"bytes,24,opt,name=tcgplayerEtchedProductId,proto3" json:"tcgplayerEtchedProductId,omitempty"`
-	TntId                    string `protobuf:"bytes,25,opt,name=tntId,proto3" json:"tntId,omitempty"`
+	CardKingdomEtchedId      string `protobuf:"bytes,1,opt,name=cardKingdomEtchedId,proto3" json:"cardKingdomEtchedId,omitempty" bson:"cardKingdomEtchedId"`            // @gotags: bson:"cardKingdomEtchedId"
+	CardKingdomFoilId        string `protobuf:"bytes,2,opt,name=cardKingdomFoilId,proto3" json:"cardKingdomFoilId,omitempty" bson:"cardKingdomFoilId"`                // @gotags: bson:"cardKingdomFoilId"
+	CardKingdomId            string `protobuf:"bytes,3,opt,name=cardKingdomId,proto3" json:"cardKingdomId,omitempty" bson:"cardKingdomId"`                        // @gotags: bson:"cardKingdomId"
+	CardsphereId             string `protobuf:"bytes,4,opt,name=cardsphereId,proto3" json:"cardsphereId,omitempty" bson:"cardsphereId"`                          // @gotags: bson:"cardsphereId"
+	CardsphereFoilId         string `protobuf:"bytes,5,opt,name=cardsphereFoilId,proto3" json:"cardsphereFoilId,omitempty" bson:"cardsphereFoilId"`                  // @gotags: bson:"cardsphereFoilId"
+	CardtraderId             string `protobuf:"bytes,6,opt,name=cardtraderId,proto3" json:"cardtraderId,omitempty" bson:"cardtraderId"`                          // @gotags: bson:"cardtraderId"
+	CsiId                    string `protobuf:"bytes,7,opt,name=csiId,proto3" json:"csiId,omitempty" bson:"csiId"`                                        // @gotags: bson:"csiId"
+	McmId                    string `protobuf:"bytes,8,opt,name=mcmId,proto3" json:"mcmId,omitempty" bson:"mcmId"`                                        // @gotags: bson:"mcmId"
+	McmMetaId                string `protobuf:"bytes,9,opt,name=mcmMetaId,proto3" json:"mcmMetaId,omitempty" bson:"mcmMetaId"`                                // @gotags: bson:"mcmMetaId"
+	MiniaturemarketId        string `protobuf:"bytes,10,opt,name=miniaturemarketId,proto3" json:"miniaturemarketId,omitempty" bson:"miniaturemarketId"`               // @gotags: bson:"miniaturemarketId"
+	MtgArenaId               string `protobuf:"bytes,11,opt,name=mtgArenaId,proto3" json:"mtgArenaId,omitempty" bson:"mtgArenaId"`                             // @gotags: bson:"mtgArenaId"
+	MtgjsonFoilVersionId     string `protobuf:"bytes,12,opt,name=mtgjsonFoilVersionId,proto3" json:"mtgjsonFoilVersionId,omitempty" bson:"mtgjsonFoilVersionId"`         // @gotags: bson:"mtgjsonFoilVersionId"
+	MtgjsonNonFoilVersionId  string `protobuf:"bytes,13,opt,name=mtgjsonNonFoilVersionId,proto3" json:"mtgjsonNonFoilVersionId,omitempty" bson:"mtgjsonNonFoilVersionId"`   // @gotags: bson:"mtgjsonNonFoilVersionId"
+	MtgjsonV4Id              string `protobuf:"bytes,14,opt,name=mtgjsonV4Id,proto3" json:"mtgjsonV4Id,omitempty" bson:"mtgjsonV4Id"`                           // @gotags: bson:"mtgjsonV4Id"
+	MtgoFoilId               string `protobuf:"bytes,15,opt,name=mtgoFoilId,proto3" json:"mtgoFoilId,omitempty" bson:"mtgoFoilId"`                             // @gotags: bson:"mtgoFoilId"
+	MtgoId                   string `protobuf:"bytes,16,opt,name=mtgoId,proto3" json:"mtgoId,omitempty" bson:"mtgoId"`                                     // @gotags: bson:"mtgoId"
+	MultiverseId             string `protobuf:"bytes,17,opt,name=multiverseId,proto3" json:"multiverseId,omitempty" bson:"multiverseId"`                         // @gotags: bson:"multiverseId"
+	ScgId                    string `protobuf:"bytes,18,opt,name=scgId,proto3" json:"scgId,omitempty" bson:"scgId"`                                       // @gotags: bson:"scgId"
+	ScryfallId               string `protobuf:"bytes,19,opt,name=scryfallId,proto3" json:"scryfallId,omitempty" bson:"scryfallId"`                             // @gotags: bson:"scryfallId"
+	ScryfallCardBackId       string `protobuf:"bytes,20,opt,name=scryfallCardBackId,proto3" json:"scryfallCardBackId,omitempty" bson:"scryfallCardBackId"`             // @gotags: bson:"scryfallCardBackId"
+	ScryfallOracleId         string `protobuf:"bytes,21,opt,name=scryfallOracleId,proto3" json:"scryfallOracleId,omitempty" bson:"scryfallOracleId"`                 // @gotags: bson:"scryfallOracleId"
+	ScryfallIllustrationId   string `protobuf:"bytes,22,opt,name=scryfallIllustrationId,proto3" json:"scryfallIllustrationId,omitempty" bson:"scryfallIllustrationId"`     // @gotags: bson:"scryfallIllustrationId"
+	TcgplayerProductId       string `protobuf:"bytes,23,opt,name=tcgplayerProductId,proto3" json:"tcgplayerProductId,omitempty" bson:"tcgplayerProductId"`             // @gotags: bson:"tcgplayerProductId"
+	TcgplayerEtchedProductId string `protobuf:"bytes,24,opt,name=tcgplayerEtchedProductId,proto3" json:"tcgplayerEtchedProductId,omitempty" bson:"tcgplayerEtchedProductId"` // @gotags: bson:"tcgplayerEtchedProductId"
+	TntId                    string `protobuf:"bytes,25,opt,name=tntId,proto3" json:"tntId,omitempty" bson:"tntId"`                                       // @gotags: bson:"tntId"
 }
 
 func (x *CardIdentifiers) Reset() {

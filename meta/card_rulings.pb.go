@@ -25,8 +25,8 @@ type CardRulings struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Date string `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
-	Text string `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty"`
+	Date string `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty" bson:"date"` // @gotags: bson:"date"
+	Text string `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty" bson:"text"` // @gotags: bson:"text"
 }
 
 func (x *CardRulings) Reset() {

@@ -25,12 +25,12 @@ type SealedProductContents struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Card     *SealedProductCard                `protobuf:"bytes,1,opt,name=card,proto3" json:"card,omitempty"`
-	Deck     *SealedProductDeck                `protobuf:"bytes,2,opt,name=deck,proto3" json:"deck,omitempty"`
-	Other    *SealedProductOther               `protobuf:"bytes,3,opt,name=other,proto3" json:"other,omitempty"`
-	Pack     *SealedProductPack                `protobuf:"bytes,4,opt,name=pack,proto3" json:"pack,omitempty"`
-	Sealed   *SealedProductSealed              `protobuf:"bytes,5,opt,name=sealed,proto3" json:"sealed,omitempty"`
-	Variable map[string]*SealedProductContents `protobuf:"bytes,6,rep,name=variable,proto3" json:"variable,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Card     *SealedProductCard                `protobuf:"bytes,1,opt,name=card,proto3" json:"card,omitempty" bson:"card"`                                                                                                 // @gotags: bson:"card"
+	Deck     *SealedProductDeck                `protobuf:"bytes,2,opt,name=deck,proto3" json:"deck,omitempty" bson:"deck"`                                                                                                 // @gotags: bson:"deck"
+	Other    *SealedProductOther               `protobuf:"bytes,3,opt,name=other,proto3" json:"other,omitempty" bson:"other"`                                                                                               // @gotags: bson:"other"
+	Pack     *SealedProductPack                `protobuf:"bytes,4,opt,name=pack,proto3" json:"pack,omitempty" bson:"pack"`                                                                                                 // @gotags: bson:"pack"
+	Sealed   *SealedProductSealed              `protobuf:"bytes,5,opt,name=sealed,proto3" json:"sealed,omitempty" bson:"sealed"`                                                                                             // @gotags: bson:"sealed"
+	Variable map[string]*SealedProductContents `protobuf:"bytes,6,rep,name=variable,proto3" json:"variable,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3" bson:"variable"` // @gotags: bson:"variable"
 }
 
 func (x *SealedProductContents) Reset() {

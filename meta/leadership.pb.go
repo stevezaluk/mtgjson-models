@@ -25,9 +25,9 @@ type LeadershipSkills struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Brawl       bool `protobuf:"varint,1,opt,name=brawl,proto3" json:"brawl,omitempty"`
-	Commander   bool `protobuf:"varint,2,opt,name=commander,proto3" json:"commander,omitempty"`
-	Oathbreaker bool `protobuf:"varint,3,opt,name=oathbreaker,proto3" json:"oathbreaker,omitempty"`
+	Brawl       bool `protobuf:"varint,1,opt,name=brawl,proto3" json:"brawl,omitempty" bson:"brawl"`             // @gotags: bson:"brawl"
+	Commander   bool `protobuf:"varint,2,opt,name=commander,proto3" json:"commander,omitempty" bson:"commander"`     // @gotags: bson:"commander"
+	Oathbreaker bool `protobuf:"varint,3,opt,name=oathbreaker,proto3" json:"oathbreaker,omitempty" bson:"oathbreaker"` // @gotags: bson:"oathbreaker"
 }
 
 func (x *LeadershipSkills) Reset() {

@@ -25,29 +25,29 @@ type CardLegalities struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Alchemy         string `protobuf:"bytes,1,opt,name=alchemy,proto3" json:"alchemy,omitempty"`
-	Brawl           string `protobuf:"bytes,2,opt,name=brawl,proto3" json:"brawl,omitempty"`
-	Commander       string `protobuf:"bytes,3,opt,name=commander,proto3" json:"commander,omitempty"`
-	Duel            string `protobuf:"bytes,4,opt,name=duel,proto3" json:"duel,omitempty"`
-	Explorer        string `protobuf:"bytes,5,opt,name=explorer,proto3" json:"explorer,omitempty"`
-	Future          string `protobuf:"bytes,6,opt,name=future,proto3" json:"future,omitempty"`
-	Gladiator       string `protobuf:"bytes,7,opt,name=gladiator,proto3" json:"gladiator,omitempty"`
-	Historic        string `protobuf:"bytes,8,opt,name=historic,proto3" json:"historic,omitempty"`
-	HistoricBrawl   string `protobuf:"bytes,9,opt,name=historicBrawl,proto3" json:"historicBrawl,omitempty"`
-	Legacy          string `protobuf:"bytes,10,opt,name=legacy,proto3" json:"legacy,omitempty"`
-	Modern          string `protobuf:"bytes,11,opt,name=modern,proto3" json:"modern,omitempty"`
-	Oathbreaker     string `protobuf:"bytes,12,opt,name=oathbreaker,proto3" json:"oathbreaker,omitempty"`
-	Oldschool       string `protobuf:"bytes,13,opt,name=oldschool,proto3" json:"oldschool,omitempty"`
-	Pauper          string `protobuf:"bytes,14,opt,name=pauper,proto3" json:"pauper,omitempty"`
-	Paupercommander string `protobuf:"bytes,15,opt,name=paupercommander,proto3" json:"paupercommander,omitempty"`
-	Penny           string `protobuf:"bytes,16,opt,name=penny,proto3" json:"penny,omitempty"`
-	Pioneer         string `protobuf:"bytes,17,opt,name=pioneer,proto3" json:"pioneer,omitempty"`
-	Predh           string `protobuf:"bytes,18,opt,name=predh,proto3" json:"predh,omitempty"`
-	Premodern       string `protobuf:"bytes,19,opt,name=premodern,proto3" json:"premodern,omitempty"`
-	Standard        string `protobuf:"bytes,20,opt,name=standard,proto3" json:"standard,omitempty"`
-	Standardbrawl   string `protobuf:"bytes,21,opt,name=standardbrawl,proto3" json:"standardbrawl,omitempty"`
-	Timeless        string `protobuf:"bytes,22,opt,name=timeless,proto3" json:"timeless,omitempty"`
-	Vintage         string `protobuf:"bytes,23,opt,name=vintage,proto3" json:"vintage,omitempty"`
+	Alchemy         string `protobuf:"bytes,1,opt,name=alchemy,proto3" json:"alchemy,omitempty" bson:"alchemy"`                  // @gotags: bson:"alchemy"
+	Brawl           string `protobuf:"bytes,2,opt,name=brawl,proto3" json:"brawl,omitempty" bson:"brawl"`                      // @gotags: bson:"brawl"
+	Commander       string `protobuf:"bytes,3,opt,name=commander,proto3" json:"commander,omitempty" bson:"commander"`              // @gotags: bson:"commander"
+	Duel            string `protobuf:"bytes,4,opt,name=duel,proto3" json:"duel,omitempty" bson:"duel"`                        // @gotags: bson:"duel"
+	Explorer        string `protobuf:"bytes,5,opt,name=explorer,proto3" json:"explorer,omitempty" bson:"explorer"`                // @gotags: bson:"explorer"
+	Future          string `protobuf:"bytes,6,opt,name=future,proto3" json:"future,omitempty" bson:"future"`                    // @gotags: bson:"future"
+	Gladiator       string `protobuf:"bytes,7,opt,name=gladiator,proto3" json:"gladiator,omitempty" bson:"gladiator"`              // @gotags: bson:"gladiator"
+	Historic        string `protobuf:"bytes,8,opt,name=historic,proto3" json:"historic,omitempty" bson:"historic"`                // @gotags: bson:"historic"
+	HistoricBrawl   string `protobuf:"bytes,9,opt,name=historicBrawl,proto3" json:"historicBrawl,omitempty" bson:"historicBrawl"`      // @gotags: bson:"historicBrawl"
+	Legacy          string `protobuf:"bytes,10,opt,name=legacy,proto3" json:"legacy,omitempty" bson:"legacy"`                   // @gotags: bson:"legacy"
+	Modern          string `protobuf:"bytes,11,opt,name=modern,proto3" json:"modern,omitempty" bson:"modern"`                   // @gotags: bson:"modern"
+	Oathbreaker     string `protobuf:"bytes,12,opt,name=oathbreaker,proto3" json:"oathbreaker,omitempty" bson:"oathbreaker"`         // @gotags: bson:"oathbreaker"
+	Oldschool       string `protobuf:"bytes,13,opt,name=oldschool,proto3" json:"oldschool,omitempty" bson:"oldschool"`             // @gotags: bson:"oldschool"
+	Pauper          string `protobuf:"bytes,14,opt,name=pauper,proto3" json:"pauper,omitempty" bson:"pauper"`                   // @gotags: bson:"pauper"
+	Paupercommander string `protobuf:"bytes,15,opt,name=paupercommander,proto3" json:"paupercommander,omitempty" bson:"paupercommander"` // @gotags: bson:"paupercommander"
+	Penny           string `protobuf:"bytes,16,opt,name=penny,proto3" json:"penny,omitempty" bson:"penny"`                     // @gotags: bson:"penny"
+	Pioneer         string `protobuf:"bytes,17,opt,name=pioneer,proto3" json:"pioneer,omitempty" bson:"pioneer"`                 // @gotags: bson:"pioneer"
+	Predh           string `protobuf:"bytes,18,opt,name=predh,proto3" json:"predh,omitempty" bson:"predh"`                     // @gotags: bson:"predh"
+	Premodern       string `protobuf:"bytes,19,opt,name=premodern,proto3" json:"premodern,omitempty" bson:"premodern"`             // @gotags: bson:"premodern"
+	Standard        string `protobuf:"bytes,20,opt,name=standard,proto3" json:"standard,omitempty" bson:"standard"`               // @gotags: bson:"standard"
+	Standardbrawl   string `protobuf:"bytes,21,opt,name=standardbrawl,proto3" json:"standardbrawl,omitempty" bson:"standardbrawl"`     // @gotags: bson:"standardbrawl"
+	Timeless        string `protobuf:"bytes,22,opt,name=timeless,proto3" json:"timeless,omitempty" bson:"timeless"`               // @gotags: bson:"timeless"
+	Vintage         string `protobuf:"bytes,23,opt,name=vintage,proto3" json:"vintage,omitempty" bson:"vintage"`                 // @gotags: bson:"vintage"
 }
 
 func (x *CardLegalities) Reset() {

@@ -25,12 +25,12 @@ type PurchaseUrls struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CardKingdom       string `protobuf:"bytes,1,opt,name=cardKingdom,proto3" json:"cardKingdom,omitempty"`
-	CardKingdomEtched string `protobuf:"bytes,2,opt,name=cardKingdomEtched,proto3" json:"cardKingdomEtched,omitempty"`
-	CardKingdomFoil   string `protobuf:"bytes,3,opt,name=cardKingdomFoil,proto3" json:"cardKingdomFoil,omitempty"`
-	Cardmarket        string `protobuf:"bytes,4,opt,name=cardmarket,proto3" json:"cardmarket,omitempty"`
-	Tcgplayer         string `protobuf:"bytes,5,opt,name=tcgplayer,proto3" json:"tcgplayer,omitempty"`
-	TcgplayerEtched   string `protobuf:"bytes,6,opt,name=tcgplayerEtched,proto3" json:"tcgplayerEtched,omitempty"`
+	CardKingdom       string `protobuf:"bytes,1,opt,name=cardKingdom,proto3" json:"cardKingdom,omitempty" bson:"cardKingdom"`             // @gotags: bson:"cardKingdom"
+	CardKingdomEtched string `protobuf:"bytes,2,opt,name=cardKingdomEtched,proto3" json:"cardKingdomEtched,omitempty" bson:"cardKingdomEtched"` // @gotags: bson:"cardKingdomEtched"
+	CardKingdomFoil   string `protobuf:"bytes,3,opt,name=cardKingdomFoil,proto3" json:"cardKingdomFoil,omitempty" bson:"cardKingdomFoil"`     // @gotags: bson:"cardKingdomFoil"
+	Cardmarket        string `protobuf:"bytes,4,opt,name=cardmarket,proto3" json:"cardmarket,omitempty" bson:"cardmarket"`               // @gotags: bson:"cardmarket"
+	Tcgplayer         string `protobuf:"bytes,5,opt,name=tcgplayer,proto3" json:"tcgplayer,omitempty" bson:"tcgplayer"`                 // @gotags: bson:"tcgplayer"
+	TcgplayerEtched   string `protobuf:"bytes,6,opt,name=tcgplayerEtched,proto3" json:"tcgplayerEtched,omitempty" bson:"tcgplayerEtched"`     // @gotags: bson:"tcgplayerEtched"
 }
 
 func (x *PurchaseUrls) Reset() {

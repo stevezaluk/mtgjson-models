@@ -34,13 +34,13 @@ type Deck struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name           string               `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Code           string               `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
-	Type           string               `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty"`
-	ReleaseDate    string               `protobuf:"bytes,4,opt,name=releaseDate,proto3" json:"releaseDate,omitempty"`
-	ContentIds     *DeckContentIds      `protobuf:"bytes,5,opt,name=contentIds,proto3" json:"contentIds,omitempty"`
-	Contents       *DeckContents        `protobuf:"bytes,6,opt,name=contents,proto3" json:"contents,omitempty"`
-	MtgjsonApiMeta *meta.MTGJSONAPIMeta `protobuf:"bytes,7,opt,name=mtgjsonApiMeta,proto3" json:"mtgjsonApiMeta,omitempty"`
+	Name           string               `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" bson:"name"`                     // @gotags: bson:"name"
+	Code           string               `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty" bson:"code"`                     // @gotags: bson:"code"
+	Type           string               `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty" bson:"type"`                     // @gotags: bson:"type"
+	ReleaseDate    string               `protobuf:"bytes,4,opt,name=releaseDate,proto3" json:"releaseDate,omitempty" bson:"releaseDate"`       // @gotags: bson:"releaseDate"
+	ContentIds     *DeckContentIds      `protobuf:"bytes,5,opt,name=contentIds,proto3" json:"contentIds,omitempty" bson:"contentIds"`         // @gotags: bson:"contentIds"
+	Contents       *DeckContents        `protobuf:"bytes,6,opt,name=contents,proto3" json:"contents,omitempty" bson:"contents"`             // @gotags: bson:"contents"
+	MtgjsonApiMeta *meta.MTGJSONAPIMeta `protobuf:"bytes,7,opt,name=mtgjsonApiMeta,proto3" json:"mtgjsonApiMeta,omitempty" bson:"mtgjsonApiMeta"` // @gotags: bson:"mtgjsonApiMeta"
 }
 
 func (x *Deck) Reset() {
@@ -128,9 +128,9 @@ type DeckContentIds struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	MainBoard []string `protobuf:"bytes,1,rep,name=mainBoard,proto3" json:"mainBoard,omitempty"`
-	SideBoard []string `protobuf:"bytes,2,rep,name=sideBoard,proto3" json:"sideBoard,omitempty"`
-	Commander []string `protobuf:"bytes,3,rep,name=commander,proto3" json:"commander,omitempty"`
+	MainBoard []string `protobuf:"bytes,1,rep,name=mainBoard,proto3" json:"mainBoard,omitempty" bson:"mainBoard"` // @gotags: bson:"mainBoard"
+	SideBoard []string `protobuf:"bytes,2,rep,name=sideBoard,proto3" json:"sideBoard,omitempty" bson:"sideBoard"` // @gotags: bson:"sideBoard"
+	Commander []string `protobuf:"bytes,3,rep,name=commander,proto3" json:"commander,omitempty" bson:"commander"` // @gotags: bson:"commander"
 }
 
 func (x *DeckContentIds) Reset() {
@@ -190,9 +190,9 @@ type DeckContents struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	MainBoard []*card.CardSet `protobuf:"bytes,1,rep,name=mainBoard,proto3" json:"mainBoard,omitempty"`
-	SideBoard []*card.CardSet `protobuf:"bytes,2,rep,name=sideBoard,proto3" json:"sideBoard,omitempty"`
-	Commander []*card.CardSet `protobuf:"bytes,3,rep,name=commander,proto3" json:"commander,omitempty"`
+	MainBoard []*card.CardSet `protobuf:"bytes,1,rep,name=mainBoard,proto3" json:"mainBoard,omitempty" bson:"mainBoard"` // @gotags: bson:"mainBoard"
+	SideBoard []*card.CardSet `protobuf:"bytes,2,rep,name=sideBoard,proto3" json:"sideBoard,omitempty" bson:"sideBoard"` // @gotags: bson:"sideBoard"
+	Commander []*card.CardSet `protobuf:"bytes,3,rep,name=commander,proto3" json:"commander,omitempty" bson:"commander"` // @gotags: bson:"commander"
 }
 
 func (x *DeckContents) Reset() {

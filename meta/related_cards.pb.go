@@ -25,8 +25,8 @@ type RelatedCards struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	ReverseRelated []string `protobuf:"bytes,1,rep,name=reverseRelated,proto3" json:"reverseRelated,omitempty"`
-	Spellbook      []string `protobuf:"bytes,2,rep,name=spellbook,proto3" json:"spellbook,omitempty"`
+	ReverseRelated []string `protobuf:"bytes,1,rep,name=reverseRelated,proto3" json:"reverseRelated,omitempty" bson:"reverseRelated"` // @gotags: bson:"reverseRelated"
+	Spellbook      []string `protobuf:"bytes,2,rep,name=spellbook,proto3" json:"spellbook,omitempty" bson:"spellbook"`           // @gotags: bson:"spellbook"
 }
 
 func (x *RelatedCards) Reset() {
