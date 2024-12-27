@@ -23,6 +23,7 @@ var ErrDeckMissingId = errors.New("deck: Failed to create deck. Deck is missing 
 var ErrDeckAlreadyExists = errors.New("deck: Failed to create deck. Deck already exists")
 var ErrDeckDeleteFailed = errors.New("deck: Failed to delete deck. Unknown server issue")
 var ErrBoardNotExist = errors.New("deck: Failed to add card to deck. Requested board does not exist")
+var ErrDeckMissingContentIds = errors.New("deck: The contentId's field of the deck object is nil")
 
 /*
 Set Errors - Holds all errors that could arise from fetching or creating sets
@@ -33,6 +34,7 @@ var ErrSetUpdateFailed = errors.New("set: Failed to update set with new card(s)"
 var ErrSetDeleteFailed = errors.New("set: Failed to remove cards from set")
 var ErrSetMissingId = errors.New("set: Operation failed. Set is missing either a name or a set code")
 var ErrSetAlreadyExists = errors.New("set: Operation failed. A set already exists under this set code")
+var ErrSetMissingContentIds = errors.New("set: The contentId's field of the set object is nil")
 
 /*
 User Errors - Holds all errors that could arise from fetching or creating new users
