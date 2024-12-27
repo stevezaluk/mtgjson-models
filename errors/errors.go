@@ -28,6 +28,11 @@ var ErrBoardNotExist = errors.New("deck: Failed to add card to deck. Requested b
 Set Errors - Holds all errors that could arise from fetching or creating sets
 */
 var ErrNoSet = errors.New("set: failed to find set with the specified code")
+var ErrNoSets = errors.New("set: No sets found on index operation")
+var ErrSetUpdateFailed = errors.New("set: Failed to update set with new card(s)")
+var ErrSetDeleteFailed = errors.New("set: Failed to remove cards from set")
+var ErrSetMissingId = errors.New("set: Operation failed. Set is missing either a name or a set code")
+var ErrSetAlreadyExists = errors.New("set: Operation failed. A set already exists under this set code")
 
 /*
 User Errors - Holds all errors that could arise from fetching or creating new users
