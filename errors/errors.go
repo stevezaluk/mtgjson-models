@@ -49,6 +49,11 @@ var ErrFailedToLoginUser = errors.New("user: Failed to login user with Auth0")
 var ErrTokenInvalid = errors.New("user: Access Token is not valid")
 
 /*
+Meta Errors - Holds all errors that could arise relating the mtgjsonApiMeta object
+*/
+var ErrMissingMetaApi = errors.New("meta: Object is missing the mtgjsonMetaApi field. This is usually due to creating the object manually")
+
+/*
 Credential Errors - Holds all errors that could arise from fetching or creating new user credentials
 */
 var ErrNoCred = errors.New("userCredentials: Failed to find user credentials with the specified credentialId")
