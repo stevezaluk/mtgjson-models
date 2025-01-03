@@ -48,7 +48,13 @@ var ErrInvalidPasswordLength = errors.New("user: Failed to create user. Password
 var ErrUserMissingId = errors.New("user: Operation failed. User model is missing Id")
 var ErrFailedToRegisterUser = errors.New("user: Failed to register user with Auth0")
 var ErrFailedToLoginUser = errors.New("user: Failed to login user with Auth0")
+
+/*
+Token Errors - Holds all errors that could arise from fetching or creating tokens
+*/
 var ErrTokenInvalid = errors.New("user: Access Token is not valid")
+var ErrFailedToCreateToken = errors.New("token: Failed to create user access token")
+var ErrInvalidPermissions = errors.New("user: You do not have the permissions to access this resource")
 
 /*
 Meta Errors - Holds all errors that could arise relating the mtgjsonApiMeta object
