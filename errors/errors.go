@@ -3,6 +3,11 @@ package errors
 import "errors"
 
 /*
+Generic Issues - Holds all errors that are generic and dont relate to a specific card object
+*/
+var ErrInvalidObjectStructure = errors.New("request: Failed to bind object to request. Object structure may be incorrect")
+
+/*
 Card Errors - Holds all errors that could arise from fetching or inserting cards
 */
 var ErrNoCard = errors.New("card: failed to find card with specified uuid")
