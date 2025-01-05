@@ -12,6 +12,7 @@ var ErrCardMissingId = errors.New("card: Card is missing a name and/or a mtgjson
 var ErrCardAlreadyExist = errors.New("card: Operation failed. Card already exists")
 var ErrCardDeleteFailed = errors.New("card: Operation failed. Failed to remove card")
 var ErrCardUpdateFailed = errors.New("card: Operation failed. Failed to update card with new metadata")
+var ErrInvalidCards = errors.New("card: Could not update deck or set. Some cards are invalid or do not exist")
 
 /*
 Deck Errors - Holds all errors that could arise from fetching or inserting decks
@@ -24,6 +25,7 @@ var ErrDeckAlreadyExists = errors.New("deck: Operation Failed. Deck already exis
 var ErrDeckDeleteFailed = errors.New("deck: Operation failed. Issue while deleting deck")
 var ErrBoardNotExist = errors.New("deck: Operation failed. Requested board does not exist")
 var ErrDeckMissingContentIds = errors.New("deck: The contentId's field of the deck object is nil")
+var ErrDeckNoCards = errors.New("deck: Could not update deck. No cards were passed to update the deck with")
 
 /*
 Set Errors - Holds all errors that could arise from fetching or creating sets
@@ -35,6 +37,7 @@ var ErrSetDeleteFailed = errors.New("set: Operation failed. Failed to remove car
 var ErrSetMissingId = errors.New("set: Operation failed. Set is missing either a name or a set code")
 var ErrSetAlreadyExists = errors.New("set: Operation failed. A set already exists under this set code")
 var ErrSetMissingContentIds = errors.New("set: The contentId's field of the set object is nil")
+var ErrSetNoCards = errors.New("set: Could not update set. No cards were passed to update the set with")
 
 /*
 User Errors - Holds all errors that could arise from fetching or creating new users
@@ -60,6 +63,7 @@ var ErrInvalidPermissions = errors.New("user: You do not have the permissions to
 Meta Errors - Holds all errors that could arise relating the mtgjsonApiMeta object
 */
 var ErrMissingMetaApi = errors.New("meta: Object is missing the mtgjsonMetaApi field. This is usually due to creating the object manually")
+var ErrMetaApiMustBeNull = errors.New("meta: The mtgjsonMetaApi field must be null. This will be created automatically")
 
 /*
 Credential Errors - Holds all errors that could arise from fetching or creating new user credentials
