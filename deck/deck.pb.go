@@ -32,14 +32,12 @@ const (
 // and fill the contents field before it gets returned to the user
 type Deck struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" bson:"name"`                                                                                      // @gotags: bson:"name"
-	Code           string                 `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty" bson:"code"`                                                                                      // @gotags: bson:"code"
-	Type           string                 `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty" bson:"type"`                                                                                      // @gotags: bson:"type"
-	ReleaseDate    string                 `protobuf:"bytes,4,opt,name=releaseDate,proto3" json:"releaseDate,omitempty" bson:"releaseDate"`                                                                        // @gotags: bson:"releaseDate"
-	MainBoard      map[string]int64       `protobuf:"bytes,5,rep,name=mainBoard,proto3" json:"mainBoard,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" bson:"mainBoard"` // @gotags: bson:"mainBoard"
-	SideBoard      map[string]int64       `protobuf:"bytes,6,rep,name=sideBoard,proto3" json:"sideBoard,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" bson:"sideBoard"` // @gotags: bson:"sideBoard"
-	Commander      map[string]int64       `protobuf:"bytes,7,rep,name=commander,proto3" json:"commander,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" bson:"commander"` // @gotags: bson:"commander"
-	MtgjsonApiMeta *meta.MTGJSONAPIMeta   `protobuf:"bytes,8,opt,name=mtgjsonApiMeta,proto3" json:"mtgjsonApiMeta,omitempty" bson:"mtgjsonApiMeta"`                                                                  // @gotags: bson:"mtgjsonApiMeta"
+	Name           string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" bson:"name"`               // @gotags: bson:"name"
+	Code           string                 `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty" bson:"code"`               // @gotags: bson:"code"
+	Type           string                 `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty" bson:"type"`               // @gotags: bson:"type"
+	ReleaseDate    string                 `protobuf:"bytes,4,opt,name=releaseDate,proto3" json:"releaseDate,omitempty" bson:"releaseDate"` // @gotags: bson:"releaseDate"
+	Contents       *DeckContentIds        `protobuf:"bytes,5,opt,name=contents,proto3" json:"contents,omitempty"`
+	MtgjsonApiMeta *meta.MTGJSONAPIMeta   `protobuf:"bytes,6,opt,name=mtgjsonApiMeta,proto3" json:"mtgjsonApiMeta,omitempty" bson:"mtgjsonApiMeta"` // @gotags: bson:"mtgjsonApiMeta"
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -102,23 +100,9 @@ func (x *Deck) GetReleaseDate() string {
 	return ""
 }
 
-func (x *Deck) GetMainBoard() map[string]int64 {
+func (x *Deck) GetContents() *DeckContentIds {
 	if x != nil {
-		return x.MainBoard
-	}
-	return nil
-}
-
-func (x *Deck) GetSideBoard() map[string]int64 {
-	if x != nil {
-		return x.SideBoard
-	}
-	return nil
-}
-
-func (x *Deck) GetCommander() map[string]int64 {
-	if x != nil {
-		return x.Commander
+		return x.Contents
 	}
 	return nil
 }
@@ -126,6 +110,67 @@ func (x *Deck) GetCommander() map[string]int64 {
 func (x *Deck) GetMtgjsonApiMeta() *meta.MTGJSONAPIMeta {
 	if x != nil {
 		return x.MtgjsonApiMeta
+	}
+	return nil
+}
+
+// DeckContentIds - Represents the contents of a deck that are stored within Mongo
+type DeckContentIds struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	MainBoard     map[string]int64       `protobuf:"bytes,5,rep,name=mainBoard,proto3" json:"mainBoard,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" bson:"mainBoard"` // @gotags: bson:"mainBoard"
+	SideBoard     map[string]int64       `protobuf:"bytes,6,rep,name=sideBoard,proto3" json:"sideBoard,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" bson:"sideBoard"` // @gotags: bson:"sideBoard"
+	Commander     map[string]int64       `protobuf:"bytes,7,rep,name=commander,proto3" json:"commander,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" bson:"commander"` // @gotags: bson:"commander"
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeckContentIds) Reset() {
+	*x = DeckContentIds{}
+	mi := &file_deck_deck_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeckContentIds) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeckContentIds) ProtoMessage() {}
+
+func (x *DeckContentIds) ProtoReflect() protoreflect.Message {
+	mi := &file_deck_deck_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeckContentIds.ProtoReflect.Descriptor instead.
+func (*DeckContentIds) Descriptor() ([]byte, []int) {
+	return file_deck_deck_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *DeckContentIds) GetMainBoard() map[string]int64 {
+	if x != nil {
+		return x.MainBoard
+	}
+	return nil
+}
+
+func (x *DeckContentIds) GetSideBoard() map[string]int64 {
+	if x != nil {
+		return x.SideBoard
+	}
+	return nil
+}
+
+func (x *DeckContentIds) GetCommander() map[string]int64 {
+	if x != nil {
+		return x.Commander
 	}
 	return nil
 }
@@ -142,7 +187,7 @@ type DeckContents struct {
 
 func (x *DeckContents) Reset() {
 	*x = DeckContents{}
-	mi := &file_deck_deck_proto_msgTypes[1]
+	mi := &file_deck_deck_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -154,7 +199,7 @@ func (x *DeckContents) String() string {
 func (*DeckContents) ProtoMessage() {}
 
 func (x *DeckContents) ProtoReflect() protoreflect.Message {
-	mi := &file_deck_deck_proto_msgTypes[1]
+	mi := &file_deck_deck_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -167,7 +212,7 @@ func (x *DeckContents) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeckContents.ProtoReflect.Descriptor instead.
 func (*DeckContents) Descriptor() ([]byte, []int) {
-	return file_deck_deck_proto_rawDescGZIP(), []int{1}
+	return file_deck_deck_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *DeckContents) GetMainBoard() map[string]*DeckContentEntry {
@@ -202,7 +247,7 @@ type DeckContentEntry struct {
 
 func (x *DeckContentEntry) Reset() {
 	*x = DeckContentEntry{}
-	mi := &file_deck_deck_proto_msgTypes[2]
+	mi := &file_deck_deck_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -214,7 +259,7 @@ func (x *DeckContentEntry) String() string {
 func (*DeckContentEntry) ProtoMessage() {}
 
 func (x *DeckContentEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_deck_deck_proto_msgTypes[2]
+	mi := &file_deck_deck_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -227,7 +272,7 @@ func (x *DeckContentEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeckContentEntry.ProtoReflect.Descriptor instead.
 func (*DeckContentEntry) Descriptor() ([]byte, []int) {
-	return file_deck_deck_proto_rawDescGZIP(), []int{2}
+	return file_deck_deck_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DeckContentEntry) GetQuantity() int64 {
@@ -248,16 +293,18 @@ var File_deck_deck_proto protoreflect.FileDescriptor
 
 const file_deck_deck_proto_rawDesc = "" +
 	"\n" +
-	"\x0fdeck/deck.proto\x12\x04deck\x1a\x13card/card_set.proto\x1a\x16meta/mtgjson_api.proto\"\x87\x04\n" +
+	"\x0fdeck/deck.proto\x12\x04deck\x1a\x13card/card_set.proto\x1a\x16meta/mtgjson_api.proto\"\xd4\x01\n" +
 	"\x04Deck\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n" +
 	"\x04code\x18\x02 \x01(\tR\x04code\x12\x12\n" +
 	"\x04type\x18\x03 \x01(\tR\x04type\x12 \n" +
-	"\vreleaseDate\x18\x04 \x01(\tR\vreleaseDate\x127\n" +
-	"\tmainBoard\x18\x05 \x03(\v2\x19.deck.Deck.MainBoardEntryR\tmainBoard\x127\n" +
-	"\tsideBoard\x18\x06 \x03(\v2\x19.deck.Deck.SideBoardEntryR\tsideBoard\x127\n" +
-	"\tcommander\x18\a \x03(\v2\x19.deck.Deck.CommanderEntryR\tcommander\x12<\n" +
-	"\x0emtgjsonApiMeta\x18\b \x01(\v2\x14.meta.MTGJSONAPIMetaR\x0emtgjsonApiMeta\x1a<\n" +
+	"\vreleaseDate\x18\x04 \x01(\tR\vreleaseDate\x120\n" +
+	"\bcontents\x18\x05 \x01(\v2\x14.deck.DeckContentIdsR\bcontents\x12<\n" +
+	"\x0emtgjsonApiMeta\x18\x06 \x01(\v2\x14.meta.MTGJSONAPIMetaR\x0emtgjsonApiMeta\"\x93\x03\n" +
+	"\x0eDeckContentIds\x12A\n" +
+	"\tmainBoard\x18\x05 \x03(\v2#.deck.DeckContentIds.MainBoardEntryR\tmainBoard\x12A\n" +
+	"\tsideBoard\x18\x06 \x03(\v2#.deck.DeckContentIds.SideBoardEntryR\tsideBoard\x12A\n" +
+	"\tcommander\x18\a \x03(\v2#.deck.DeckContentIds.CommanderEntryR\tcommander\x1a<\n" +
 	"\x0eMainBoardEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\x03R\x05value:\x028\x01\x1a<\n" +
@@ -296,37 +343,39 @@ func file_deck_deck_proto_rawDescGZIP() []byte {
 	return file_deck_deck_proto_rawDescData
 }
 
-var file_deck_deck_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_deck_deck_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_deck_deck_proto_goTypes = []any{
 	(*Deck)(nil),                // 0: deck.Deck
-	(*DeckContents)(nil),        // 1: deck.DeckContents
-	(*DeckContentEntry)(nil),    // 2: deck.DeckContentEntry
-	nil,                         // 3: deck.Deck.MainBoardEntry
-	nil,                         // 4: deck.Deck.SideBoardEntry
-	nil,                         // 5: deck.Deck.CommanderEntry
-	nil,                         // 6: deck.DeckContents.MainBoardEntry
-	nil,                         // 7: deck.DeckContents.SideBoardEntry
-	nil,                         // 8: deck.DeckContents.CommanderEntry
-	(*meta.MTGJSONAPIMeta)(nil), // 9: meta.MTGJSONAPIMeta
-	(*card.CardSet)(nil),        // 10: card.CardSet
+	(*DeckContentIds)(nil),      // 1: deck.DeckContentIds
+	(*DeckContents)(nil),        // 2: deck.DeckContents
+	(*DeckContentEntry)(nil),    // 3: deck.DeckContentEntry
+	nil,                         // 4: deck.DeckContentIds.MainBoardEntry
+	nil,                         // 5: deck.DeckContentIds.SideBoardEntry
+	nil,                         // 6: deck.DeckContentIds.CommanderEntry
+	nil,                         // 7: deck.DeckContents.MainBoardEntry
+	nil,                         // 8: deck.DeckContents.SideBoardEntry
+	nil,                         // 9: deck.DeckContents.CommanderEntry
+	(*meta.MTGJSONAPIMeta)(nil), // 10: meta.MTGJSONAPIMeta
+	(*card.CardSet)(nil),        // 11: card.CardSet
 }
 var file_deck_deck_proto_depIdxs = []int32{
-	3,  // 0: deck.Deck.mainBoard:type_name -> deck.Deck.MainBoardEntry
-	4,  // 1: deck.Deck.sideBoard:type_name -> deck.Deck.SideBoardEntry
-	5,  // 2: deck.Deck.commander:type_name -> deck.Deck.CommanderEntry
-	9,  // 3: deck.Deck.mtgjsonApiMeta:type_name -> meta.MTGJSONAPIMeta
-	6,  // 4: deck.DeckContents.mainBoard:type_name -> deck.DeckContents.MainBoardEntry
-	7,  // 5: deck.DeckContents.sideBoard:type_name -> deck.DeckContents.SideBoardEntry
-	8,  // 6: deck.DeckContents.commander:type_name -> deck.DeckContents.CommanderEntry
-	10, // 7: deck.DeckContentEntry.card:type_name -> card.CardSet
-	2,  // 8: deck.DeckContents.MainBoardEntry.value:type_name -> deck.DeckContentEntry
-	2,  // 9: deck.DeckContents.SideBoardEntry.value:type_name -> deck.DeckContentEntry
-	2,  // 10: deck.DeckContents.CommanderEntry.value:type_name -> deck.DeckContentEntry
-	11, // [11:11] is the sub-list for method output_type
-	11, // [11:11] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	11, // [11:11] is the sub-list for extension extendee
-	0,  // [0:11] is the sub-list for field type_name
+	1,  // 0: deck.Deck.contents:type_name -> deck.DeckContentIds
+	10, // 1: deck.Deck.mtgjsonApiMeta:type_name -> meta.MTGJSONAPIMeta
+	4,  // 2: deck.DeckContentIds.mainBoard:type_name -> deck.DeckContentIds.MainBoardEntry
+	5,  // 3: deck.DeckContentIds.sideBoard:type_name -> deck.DeckContentIds.SideBoardEntry
+	6,  // 4: deck.DeckContentIds.commander:type_name -> deck.DeckContentIds.CommanderEntry
+	7,  // 5: deck.DeckContents.mainBoard:type_name -> deck.DeckContents.MainBoardEntry
+	8,  // 6: deck.DeckContents.sideBoard:type_name -> deck.DeckContents.SideBoardEntry
+	9,  // 7: deck.DeckContents.commander:type_name -> deck.DeckContents.CommanderEntry
+	11, // 8: deck.DeckContentEntry.card:type_name -> card.CardSet
+	3,  // 9: deck.DeckContents.MainBoardEntry.value:type_name -> deck.DeckContentEntry
+	3,  // 10: deck.DeckContents.SideBoardEntry.value:type_name -> deck.DeckContentEntry
+	3,  // 11: deck.DeckContents.CommanderEntry.value:type_name -> deck.DeckContentEntry
+	12, // [12:12] is the sub-list for method output_type
+	12, // [12:12] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_deck_deck_proto_init() }
@@ -340,7 +389,7 @@ func file_deck_deck_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_deck_deck_proto_rawDesc), len(file_deck_deck_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
