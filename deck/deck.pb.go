@@ -32,11 +32,11 @@ const (
 // and fill the contents field before it gets returned to the user
 type Deck struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	Name           string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" bson:"name"`               // @gotags: bson:"name"
-	Code           string                 `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty" bson:"code"`               // @gotags: bson:"code"
-	Type           string                 `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty" bson:"type"`               // @gotags: bson:"type"
-	ReleaseDate    string                 `protobuf:"bytes,4,opt,name=releaseDate,proto3" json:"releaseDate,omitempty" bson:"releaseDate"` // @gotags: bson:"releaseDate"
-	Contents       *DeckContentIds        `protobuf:"bytes,5,opt,name=contents,proto3" json:"contents,omitempty"`
+	Name           string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" bson:"name"`                     // @gotags: bson:"name"
+	Code           string                 `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty" bson:"code"`                     // @gotags: bson:"code"
+	Type           string                 `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty" bson:"type"`                     // @gotags: bson:"type"
+	ReleaseDate    string                 `protobuf:"bytes,4,opt,name=releaseDate,proto3" json:"releaseDate,omitempty" bson:"releaseDate"`       // @gotags: bson:"releaseDate"
+	Contents       *DeckContentIds        `protobuf:"bytes,5,opt,name=contents,proto3" json:"contents,omitempty" bson:"contents"`             // @gotags: bson:"contents"
 	MtgjsonApiMeta *meta.MTGJSONAPIMeta   `protobuf:"bytes,6,opt,name=mtgjsonApiMeta,proto3" json:"mtgjsonApiMeta,omitempty" bson:"mtgjsonApiMeta"` // @gotags: bson:"mtgjsonApiMeta"
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
